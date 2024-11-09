@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgFor, NgClass, UpperCasePipe } from '@angular/common';
 
 @Component({
-  selector: 'app-accordion',
-  templateUrl: './accordion.component.html',
-  styleUrls: ['./accordion.component.scss']
+    selector: 'app-accordion',
+    templateUrl: './accordion.component.html',
+    styleUrls: ['./accordion.component.scss'],
+    standalone: true,
+    imports: [NgFor, FontAwesomeModule, NgClass, UpperCasePipe]
 })
 export class AccordionComponent {
   listCategories = ['html', 'css', 'js'];
