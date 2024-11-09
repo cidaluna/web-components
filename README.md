@@ -25,4 +25,11 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# Web Components
+# Font Awesome
+
+Import: https://cdnjs.com/libraries/font-awesome
+Icons: https://fontawesome.com/search?q=chevron
+Docs: https://github.com/FortAwesome/angular-fontawesome
+Version: 6.5.1 e 0.12.x
+Option: Free Solid Icons
+

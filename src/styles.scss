@@ -1,0 +1,47 @@
+:root{
+  --color-blue-1: #DCECFF;
+  --color-blue-2: #aad0ff;
+  --color-blue-3: #015991;
+  --color-red-2: #b90139;
+  --color-white: #ffffff;
+  --color-white-2: #f1f1f3;
+  --color-gray-1: #d8d8d8;
+  --color-gray-2: #5f5f5f;
+  --color-gray-3: #414141;
+
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins-Regular", sans-serif;
+}
+
+/* Ao invés do import fazer a requisição, optei por carregar a fonte dentro do projeto */
+@font-face {
+  font-family: "Poppins-Regular", sans-serif;
+  src: url(./assets/fonts/Poppins-Regular.ttf) format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins-Light", sans-serif;
+  src: url(./assets/fonts/Poppins-Light.ttf) format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins-SemiBold", sans-serif;
+  src: url(./assets/fonts/Poppins-SemiBold.ttf) format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+

@@ -1,0 +1,51 @@
+<h1>Web Components: <span>Accordion </span></h1>
+<details *ngFor="let item of listCategories" class="box" (click)="isDetailsOpen(item)"
+>
+  <summary class="title">{{ item | uppercase }}
+    <fa-icon [icon]="['fas', categoryState[item] ? 'chevron-up' : 'chevron-down']" class="icon"></fa-icon>
+  </summary>
+  <div class="description" [ngClass]="{ 'open': categoryState[item] }">
+    <p>Lorem ipsum dolor sit amet consectetur adiping elit. Vel temporibus rem impedit quod,
+      consequatur amet. Culpa at modi veniam, vm magnam dicta nisi vel harum error, et,
+      ad esse esdetj.</p>
+      <!-- Chamar o componente table aqui -->
+      <div class="contentTable">
+        <table class="rTable">
+          <caption>
+            Front-end web developer 2024
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Title</th>
+              <th scope="col">Step</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="ID">1548</td>
+              <td data-label="Title">Aside oeovidnid </td>
+              <td data-label="Step">Doing</td>
+              <td data-label="Actions">Edit, Delete</td>
+            </tr>
+            <tr>
+              <td data-label="ID">1541</td>
+              <td data-label="Title">Summary oeovidnidro  zoddogojgoejrweipwepe </td>
+              <td data-label="Step">Done</td>
+              <td data-label="Actions">Edit, Delete</td>
+            </tr>
+            <tr>
+              <td data-label="ID">1544</td>
+              <td data-label="Title">Figure oeovidnid ogeaighaindkrfg drndneignkdgkdgnkd erngkdngzkdgnidgn. </td>
+              <td data-label="Step">To Do</td>
+              <td data-label="Actions">Edit, Delete</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      <!-- Fim da tabela -->
+  </div>
+</details>

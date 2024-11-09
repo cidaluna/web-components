@@ -1,0 +1,192 @@
+
+details{
+    summary{
+        list-style:none; /* remove as setas padrão da lista */
+    }
+}
+
+h1{
+    max-width: 700px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: var(--space-24);
+    font-family: "Poppins-SemiBold", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+p{
+   font-family: "Poppins-Regular", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.box{
+    max-width: 700px; /* a partir do tamanho máx posiciona o elemento no centro */
+    margin-right: auto;
+    margin-left: auto;
+    background-color: var(--color-blue-1);
+    border: 1px solid var(--color-blue-3);
+    border-radius: var(--space-16);
+    box-shadow: 1px 1px 3px rgba(0,0,0,.25);
+
+
+    &:first-child{
+        /* adiciona margem acima, apenas no primeiro elemento */
+        margin-top: var(--space-8);
+    }
+
+    &:not(:last-child){
+        /* adiciona margem abaixo, apenas se não for o último elemento */
+        margin-bottom: var(--space-16);
+    }
+
+    &:hover{
+        background-color: var(--color-blue-2);
+    }
+
+}
+
+.title{
+    padding: var(--space-12);
+    font-family: "Poppins-Regular", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    cursor: pointer;
+    font-size: var(--space-20);
+    color: var(--color-blue-3);
+    position: relative;
+    max-width: 100%;
+    white-space: nowrap; /* mantem os textos na mesma linha, ou seja, não quebra linha */
+    overflow: hidden;    /* não deixa o texto vazar na largura do box */
+    text-overflow: ellipsis; /* caso o título seja muito grande, mostra 3 pontinhos */
+
+    fa-icon{
+        position: absolute;
+        right: var(--space-12);
+        color: var(--color-red-2);
+        transform: translateY(-50%);
+        top: 50%;
+    }
+
+}
+
+.description{
+    border-top: 1px solid var(--color-gray-1);
+    font-size: var(--space-16);
+    line-height: var(--space-20);
+    padding: var(--space-12);
+    max-width: 100%;
+    white-space: wrap;   /* permite uma quebra de linha no texto caso seja grande */
+    overflow: hidden;    /* não deixa o texto vazar na largura do description */
+    text-overflow: ellipsis; /* caso o título seja muito grande, mostra 3 pontinhos */
+    border-bottom-left-radius: var(--space-16);
+    border-bottom-right-radius: var(--space-16);
+
+    &.open{
+      /* cor de fundo do description */
+      background-color: var(--color-white-2);
+      color: var(--color-gray-3);
+    }
+
+}
+
+/* CSS da tabela */
+.contentTable{
+  display: flex;
+  margin: auto;
+  justify-content: center;
+}
+
+.rTable{
+  width: 100%;
+  text-align: center;
+  thead{
+    background-color: var(--color-blue-3);
+    color: var(--color-white);
+    padding: 100px;
+    th {
+      padding: 7px 0px;
+    }
+  }
+  tbody{
+    /* multiplos de 2 ele estabelece esse background */
+    tr:nth-child(2n){
+      background-color: var(--color-blue-1);
+    }
+    td {
+      padding: 7px 0px;
+      white-space: wrap;   /* permite uma quebra de linha no texto caso seja grande */
+      overflow: hidden;    /* não deixa o texto vazar na largura do description */
+    }
+  }
+}
+
+
+@media screen and (max-width: 480px){
+  .contentTable{
+    width: 99%;
+  }
+  .rTable{
+    border: none;
+  }
+  .rTable thead{
+    display: none;  /* em celular nao mostra o thead posicionado acima */
+  }
+  .rTable tbody{
+    display: flex;
+    flex-direction: column;
+
+    tr{
+      border: 2px solid var(--color-blue-3);
+      border-radius: var(--space-16);
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+      &:not(:last-child){
+        /* adiciona margem abaixo, apenas se não for o último elemento */
+        margin-bottom: var(--space-16);
+      }
+
+      td{
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+        padding-left: 50%;
+        font-size: 16px;
+        padding-right: 15px;
+        font-weight: 400;
+        font-style: normal;
+        position: relative;
+        white-space: wrap;   /* permite uma quebra de linha no texto caso seja grande */
+        overflow: hidden;    /* não deixa o texto vazar na largura do description */
+        &:not(:last-child){
+          /* se nao for o ultimo elemento, aplica border bottom */
+          border-bottom: 1px solid var(--color-gray-1);
+        }
+      }
+
+      td:before{
+        content: attr(data-label);  /* em celular mostra o thead posicionado a esquerda */
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-size: 16px;
+        text-align: left;
+        font-weight: 600;
+        font-style: normal;
+      }
+    }
+  }
+
+}
+
+@media only screen and (min-width: 1200px){
+  .contentTable{
+    width: 100%;
+  }
+  .rTable th, .rTable td{padding: 10px 0;}
+  .rTable tbody tr td:nth-child(1){width: 10%;}
+  .rTable tbody tr td:nth-child(2){width: 50%;}
+  .rTable tbody tr td:nth-child(3){width: 20%;}
+  .rTable tbody tr td:nth-child(4){width: 20%;}
+}
